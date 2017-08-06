@@ -45,12 +45,13 @@ function setColorSquares() {
           console.log('hi');
           setTimeout(function () {
             reset();
-          }, 2000);
+          }, 2500);
         }
         addStreak();
         messageDisplay.textContent = "Correct!";
         changeColors(clickedColor);
         h1.style.backgroundColor = clickedColor;
+        resetButton.textContent = congrats();
       } else {
         this.style.backgroundColor = "#232323";
         messageDisplay.textContent = "Try Again";
@@ -58,6 +59,22 @@ function setColorSquares() {
       }
     });
   }
+}
+
+function congrats() {
+  let phrases;
+  phrases = [
+    "Nice!",
+    "Wonderful!",
+    "Great Job!",
+    "Keep it up!",
+    "Amazing!",
+    "Awesome!",
+    "You're good at this!"
+  ];
+
+  let random = Math.floor(Math.random() * phrases.length);
+  return phrases[random];
 }
 
 function reset() {
