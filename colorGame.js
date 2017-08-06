@@ -18,7 +18,7 @@ var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
 
 easyBtn.addEventListener("click", () =>{
-  h1.style.backgroundColor = "#232323";
+  h1.style.backgroundColor = "steelblue";
   resetButton.textContent = "New Colors";
 
   hardBtn.classList.remove("selected");
@@ -38,7 +38,7 @@ easyBtn.addEventListener("click", () =>{
 });
 
 hardBtn.addEventListener("click", () => {
-  h1.style.backgroundColor = "#232323";
+  h1.style.backgroundColor = "steelblue";
   resetButton.textContent = "New Colors";
 
   easyBtn.classList.remove("selected");
@@ -56,7 +56,7 @@ hardBtn.addEventListener("click", () => {
 });
 
 resetButton.addEventListener("click", () => {
-  h1.style.backgroundColor = "#232323";
+  h1.style.backgroundColor = "steelblue";
   resetButton.textContent = "New Colors";
   //generate all new colors
   colors = generateRandomColors(numSquares);
