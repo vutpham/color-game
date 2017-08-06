@@ -10,6 +10,7 @@ const colors = [
 const squares = document.querySelectorAll(".square");
 let pickedColor = colors[3];
 const colorDisplay = document.getElementById("colorDisplay");
+const messageDisplay = document.querySelector("#message");
 
 colorDisplay.textContent = pickedColor;
 
@@ -19,12 +20,25 @@ for (var i = 0; i < squares.length; i++) {
 
   //add click listeners to squares
   squares[i].addEventListener("click", function () {
+
+    //grab color of clicked square
     let clickedColor = this.style.backgroundColor;
 
+    //compare color to pickedColor
     if (clickedColor === pickedColor) {
-      alert("Correct");
+      messageDisplay.textContent = "Correct!";
+      changeColors(clickedColor);
     } else {
       this.style.backgroundColor = "#232323";
+      messageDisplay.textContent = "Try Again";
     }
   });
+}
+
+function changeColors(color) {
+  //loop through all squares
+  for (var i = 0; i < squares.length; i++) {
+    //change each color to match given color
+    squares[i].style.backgroundColor = color;
+  }
 }
