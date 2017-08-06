@@ -6,16 +6,19 @@ body {
 
 .square {
   width: 30%;
-  background: purple;
+  background-color: purple;
   padding-bottom: 30%;
   float: left;
   margin: 1.66%;
   border-radius: 50%;
+  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.6s;
 }
 
 #container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 h1 {
@@ -39,15 +42,31 @@ h1 {
   background: white;
   height: 30px;
   text-align: center;
-  color: black;
+  color: steelblue;
+}
+
+#message {
+  display: inline-block;
+  width: 20%;
 }
 
 .selected {
-  background: blue;
+  background: steelblue;
+  color: white;
 }
 
 button {
   border: none;
   background: none;
   text-transform: uppercase;
+  height: 100%;
+  font-size: inherit;
+  font-weight: 700;
+  color: steelblue;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background: steelblue;
+  color: white;
 }
