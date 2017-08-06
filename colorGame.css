@@ -36,9 +36,9 @@ body {
 h1 {
   display: flex;
   flex-direction: column;
-  color: white;
+  color: ghostwhite;
   align-items: center;
-  background: steelblue;
+  background: rgb(214, 29, 66);
   margin: 0;
   font-weight: normal;
   text-transform: uppercase;
@@ -54,7 +54,7 @@ h1 {
   background: white;
   height: 30px;
   text-align: center;
-  color: steelblue;
+  color: rgb(214, 29, 66);
 }
 
 #message {
@@ -63,7 +63,7 @@ h1 {
 }
 
 .selected {
-  background: steelblue;
+  background: rgb(214, 29, 66);
   color: white;
 }
 
@@ -74,12 +74,16 @@ button {
   height: 100%;
   font-size: inherit;
   font-weight: 700;
-  color: steelblue;
+  color: rgb(214, 29, 66);
   transition: all 0.3s;
   outline: none;
 }
 
 button:hover {
-  background: steelblue;
-  color: white;
+  background: rgb(214, 29, 66);
+  color: ghostwhite;
+}
+
+#streak {
+
 }

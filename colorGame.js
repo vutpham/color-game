@@ -16,9 +16,27 @@ var h1 = document.querySelector("h1");
 var resetButton = document.getElementById("reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
+var streakDisplay = document.querySelector("#streak");
+var test = document.querySelector("#test");
+
+var streak = 0;
+
+function addStreak(){
+  streak += 1;
+  streakDisplay.textContent = `🔥${streak}`;
+}
+
+function resetStreak(){
+  streak = 0;
+  streakDisplay.textContent = "";
+}
+
+test.addEventListener("click", () => {
+  resetStreak();
+});
 
 easyBtn.addEventListener("click", () =>{
-  h1.style.backgroundColor = "steelblue";
+  h1.style.backgroundColor = "rgb(214, 29, 66)";
   resetButton.textContent = "New Colors";
 
   hardBtn.classList.remove("selected");
@@ -38,7 +56,7 @@ easyBtn.addEventListener("click", () =>{
 });
 
 hardBtn.addEventListener("click", () => {
-  h1.style.backgroundColor = "steelblue";
+  h1.style.backgroundColor = "rgb(214, 29, 66)";
   resetButton.textContent = "New Colors";
 
   easyBtn.classList.remove("selected");
@@ -56,7 +74,7 @@ hardBtn.addEventListener("click", () => {
 });
 
 resetButton.addEventListener("click", () => {
-  h1.style.backgroundColor = "steelblue";
+  h1.style.backgroundColor = "rgb(214, 29, 66)";
   resetButton.textContent = "New Colors";
   messageDisplay.textContent = "";
   //generate all new colors
@@ -86,6 +104,7 @@ for (var i = 0; i < squares.length; i++) {
     //compare color to pickedColor
     console.log(clickedColor, pickedColor);
     if (clickedColor === pickedColor) {
+      addStreak();
       messageDisplay.textContent = "Correct!";
       changeColors(clickedColor);
       h1.style.backgroundColor = clickedColor;
