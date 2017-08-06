@@ -41,14 +41,17 @@ function setColorSquares() {
 
       //compare color to pickedColor
       if (clickedColor === pickedColor) {
+        if (h1.style.backgroundColor !== clickedColor) {
+          console.log('hi');
+          setTimeout(function () {
+            reset();
+          }, 5000);
+        }
         addStreak();
         messageDisplay.textContent = "Correct!";
         changeColors(clickedColor);
         h1.style.backgroundColor = clickedColor;
         resetButton.textContent = "Play Again?";
-        setTimeout(function () {
-          reset();
-        }, 3000);
       } else {
         this.style.backgroundColor = "#232323";
         messageDisplay.textContent = "Try Again";
