@@ -13,10 +13,20 @@ var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.getElementById("reset");
+var easyBtn = document.querySelector("#easyBtn");
+var hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", () => {
+  alert("Easy");
+});
+
+hardBtn.addEventListener("click", () => {
+  alert("Hard");
+});
 
 resetButton.addEventListener("click", () => {
   h1.style.backgroundColor = "#232323";
-  resetButton.textContent = "New Colors"
+  resetButton.textContent = "New Colors";
   //generate all new colors
   colors = generateRandomColors(6);
   //pick a new random color from array
