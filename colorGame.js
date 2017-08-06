@@ -42,7 +42,6 @@ function setColorSquares() {
       //compare color to pickedColor
       if (clickedColor === pickedColor) {
         if (h1.style.backgroundColor !== clickedColor) {
-          console.log('hi');
           setTimeout(function () {
             reset();
           }, 2500);
