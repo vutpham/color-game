@@ -128,5 +128,5 @@ function randomColor() {
   //pick a B from 0-255
   let b = Math.floor(Math.random() * 256);
 
-  return "rgb(" + r + ", " + g + ", " + b +")"
+  return "rgb(" + r + ", " + g + ", " + b +")";
 }
