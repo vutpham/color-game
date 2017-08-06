@@ -12,6 +12,12 @@ var streakDisplay = document.querySelector("#streak");
 init();
 
 function init() {
+  setModeButtons();
+  setColorSquares();
+  reset();
+}
+
+function setModeButtons() {
   for (var i = 0; i < modeButtons.length; i++) {
     modeButtons[i].addEventListener("click", function () {
       // Remove 'selected' from buttons and adds 'selected' if clicked
@@ -23,7 +29,9 @@ function init() {
       reset();
     });
   }
+}
 
+function setColorSquares() {
   for (var i = 0; i < squares.length; i++) {
     //add click listeners to squares
     squares[i].addEventListener("click", function () {
@@ -32,14 +40,15 @@ function init() {
       let clickedColor = this.style.backgroundColor;
 
       //compare color to pickedColor
-      console.log(clickedColor, pickedColor);
       if (clickedColor === pickedColor) {
         addStreak();
         messageDisplay.textContent = "Correct!";
         changeColors(clickedColor);
         h1.style.backgroundColor = clickedColor;
         resetButton.textContent = "Play Again?";
-        setTimeout(function(){ reset(); }, 3000);
+        setTimeout(function () {
+          reset();
+        }, 3000);
       } else {
         this.style.backgroundColor = "#232323";
         messageDisplay.textContent = "Try Again";
@@ -47,8 +56,6 @@ function init() {
       }
     });
   }
-
-  reset();
 }
 
 function reset() {
@@ -77,14 +84,9 @@ function reset() {
 var streak = 0;
 
 function addStreak(){
-  console.log(messageDisplay);
   if (messageDisplay.textContent !== "Correct!") {
     streak += 1;
-    if (streak >= 2) {
-      streakDisplay.textContent = `🔥${streak}`;
-    } else {
-      streakDisplay.textContent = streak;
-    }
+    streakDisplay.textContent = `🔥${streak}`;
   }
 }
 
@@ -97,10 +99,7 @@ resetButton.addEventListener("click", () => {
   reset();
 });
 
-colorDisplay.textContent = pickedColor;
-
 // Change colors after correct guess
-
 function changeColors(color) {
   //loop through all squares
   for (var i = 0; i < squares.length; i++) {
