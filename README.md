@@ -40,7 +40,7 @@ function setModeButtons() {
 
 ### Randomized Colors
 
-The following code snippet handles the logic for generating the randomized RGB code:
+The syntax of RGB is as follows: `rgb(r, g, b)`, where the value of each color range between 0 and 255. **Black** is at `rbg(0, 0, 0)`, while **white** is at `rbg(255, 255,255)`. The code snippet below handles the logic for generating the randomized RGB code:
 
 ```javascript
 function randomColor() {
