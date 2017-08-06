@@ -1,4 +1,5 @@
-var colors = generateRandomColors(6);
+var numSquares = 6;
+var colors = generateRandomColors(numSquares);
 // [
 //   "rgb(255, 0, 0)",
 //   "rgb(255, 255, 0)",
@@ -16,19 +17,49 @@ var resetButton = document.getElementById("reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
 
-easyBtn.addEventListener("click", () => {
-  alert("Easy");
+easyBtn.addEventListener("click", () =>{
+  h1.style.backgroundColor = "#232323";
+  resetButton.textContent = "New Colors";
+
+  hardBtn.classList.remove("selected");
+  easyBtn.classList.add("selected");
+
+  numSquares = 3;
+  colors = generateRandomColors(numSquares);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+  for (var i = 0; i < squares.length; i++) {
+    if (colors[i]) {
+      squares[i].style.backgroundColor = colors[i];
+    } else {
+      squares[i].style.display = "none";
+    }
+  }
 });
 
 hardBtn.addEventListener("click", () => {
-  alert("Hard");
+  h1.style.backgroundColor = "#232323";
+  resetButton.textContent = "New Colors";
+
+  easyBtn.classList.remove("selected");
+  hardBtn.classList.add("selected");
+
+  numSquares = 6;
+  colors = generateRandomColors(numSquares);
+  pickedColor = pickColor();
+  colorDisplay.textContent = pickedColor;
+
+  for (var i = 0; i < squares.length; i++) {
+    squares[i].style.backgroundColor = colors[i];
+    squares[i].style.display = "block";
+  }
 });
 
 resetButton.addEventListener("click", () => {
   h1.style.backgroundColor = "#232323";
   resetButton.textContent = "New Colors";
   //generate all new colors
-  colors = generateRandomColors(6);
+  colors = generateRandomColors(numSquares);
   //pick a new random color from array
   pickedColor = pickColor();
   //change color display to match picked color;
@@ -80,7 +111,7 @@ function pickColor() {
 
 function generateRandomColors(num) {
   // colors = this array
-  let arr = []
+  let arr = [];
   for (var i = 0; i < num; i++) {
     arr[i] = randomColor();
   }
