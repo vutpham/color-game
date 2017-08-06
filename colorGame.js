@@ -10,9 +10,10 @@ const colors = generateRandomColors(6);
 // ];
 
 const squares = document.querySelectorAll(".square");
-let pickedColor = pickColor();
+const pickedColor = pickColor();
 const colorDisplay = document.getElementById("colorDisplay");
 const messageDisplay = document.querySelector("#message");
+const h1 = document.querySelector("h1")
 
 colorDisplay.textContent = pickedColor;
 
@@ -27,9 +28,11 @@ for (var i = 0; i < squares.length; i++) {
     let clickedColor = this.style.backgroundColor;
 
     //compare color to pickedColor
+    console.log(clickedColor, pickedColor);
     if (clickedColor === pickedColor) {
       messageDisplay.textContent = "Correct!";
       changeColors(clickedColor);
+      h1.style.backgroundColor = clickedColor;
     } else {
       this.style.backgroundColor = "#232323";
       messageDisplay.textContent = "Try Again";
