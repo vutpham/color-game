@@ -45,13 +45,12 @@ function setColorSquares() {
           console.log('hi');
           setTimeout(function () {
             reset();
-          }, 5000);
+          }, 2000);
         }
         addStreak();
         messageDisplay.textContent = "Correct!";
         changeColors(clickedColor);
         h1.style.backgroundColor = clickedColor;
-        resetButton.textContent = "Play Again?";
       } else {
         this.style.backgroundColor = "#232323";
         messageDisplay.textContent = "Try Again";
@@ -101,7 +100,9 @@ function resetStreak(){
 }
 
 resetButton.addEventListener("click", () => {
-  reset();
+  if (messageDisplay.textContent !== "Correct!") {
+    reset();
+  }
 });
 
 // Change colors after correct guess
