@@ -1,6 +1,6 @@
 # What's This RGB?
 
-[What's This RGB?](www.vutpham.com/color-game) is an interactive game to learn the RGB color model. It is written using pure vanilla JavaScript, HTML, and CSS.
+[What's This RGB?](http://vutpham.com/color-game) is an interactive game to learn the RGB color model. It is written using pure vanilla JavaScript, HTML, and CSS.
 
 What's This RGB? is designed to quickly teach the RGB color model by quickly generating new colors after every correct guess.
 
