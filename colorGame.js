@@ -19,11 +19,19 @@ var hardBtn = document.querySelector("#hardBtn");
 var streakDisplay = document.querySelector("#streak");
 var test = document.querySelector("#test");
 
+
+// Logic for correct streak
+
 var streak = 0;
 
 function addStreak(){
-  streak += 1;
-  streakDisplay.textContent = `🔥${streak}`;
+  console.log(messageDisplay);
+  if (messageDisplay.textContent !== "Correct!") {
+    streak += 1;
+    if (streak >= 2) {
+      streakDisplay.textContent = `🔥${streak}`;
+    }
+  }
 }
 
 function resetStreak(){
@@ -34,6 +42,8 @@ function resetStreak(){
 test.addEventListener("click", () => {
   resetStreak();
 });
+
+// Mode-toggle:  EASY
 
 easyBtn.addEventListener("click", () =>{
   h1.style.backgroundColor = "rgb(214, 29, 66)";
@@ -55,6 +65,8 @@ easyBtn.addEventListener("click", () =>{
   }
 });
 
+// Mode-toggle:  HARD
+
 hardBtn.addEventListener("click", () => {
   h1.style.backgroundColor = "rgb(214, 29, 66)";
   resetButton.textContent = "New Colors";
@@ -72,6 +84,8 @@ hardBtn.addEventListener("click", () => {
     squares[i].style.display = "block";
   }
 });
+
+// Reset Button & Play Again logic
 
 resetButton.addEventListener("click", () => {
   h1.style.backgroundColor = "rgb(214, 29, 66)";
@@ -112,9 +126,12 @@ for (var i = 0; i < squares.length; i++) {
     } else {
       this.style.backgroundColor = "#232323";
       messageDisplay.textContent = "Try Again";
+      resetStreak();
     }
   });
 }
+
+// Change colors after correct guess
 
 function changeColors(color) {
   //loop through all squares
@@ -129,8 +146,10 @@ function pickColor() {
   return colors[random];
 }
 
+
+// Create an array of random colors to be assigned to colors
+
 function generateRandomColors(num) {
-  // colors = this array
   let arr = [];
   for (var i = 0; i < num; i++) {
     arr[i] = randomColor();
@@ -138,6 +157,8 @@ function generateRandomColors(num) {
 
   return arr;
 }
+
+// Logic for generating randomized RGB
 
 function randomColor() {
   //pick a R from 0-255
