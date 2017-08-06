@@ -61,7 +61,11 @@ function setColorSquares() {
 function reset() {
   h1.style.backgroundColor = "rgb(214, 29, 66)";
   resetButton.textContent = "New Colors";
-  messageDisplay.textContent = "";
+  if (streak) {
+    messageDisplay.textContent = `🔥 ${streak}`;
+  } else {
+    messageDisplay.textContent = "";
+  }
   //generate all new colors
   colors = generateRandomColors(numSquares);
   //pick a new random color from array
@@ -86,13 +90,11 @@ var streak = 0;
 function addStreak(){
   if (messageDisplay.textContent !== "Correct!") {
     streak += 1;
-    streakDisplay.textContent = `🔥${streak}`;
   }
 }
 
 function resetStreak(){
   streak = 0;
-  streakDisplay.textContent = "";
 }
 
 resetButton.addEventListener("click", () => {
