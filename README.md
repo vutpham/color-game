@@ -1,6 +1,6 @@
-# What's This RGB?
+# RGBandMe
 
-[What's This RGB?](http://vutpham.com/color-game) is an interactive game to learn the RGB color model. It is written using pure vanilla JavaScript, HTML, and CSS.
+[RGBandMe](http://vutpham.com/color-game) is an interactive game to learn the RGB color model. It is written using pure vanilla JavaScript, HTML, and CSS.
 
 This game is designed to quickly teach the RGB color model by rapidly generating new colors after every correct guess.
 
@@ -20,7 +20,7 @@ The syntax of RGB is as follows: `rgb(r, g, b)`, where the value of each color r
 
 ### Modes (Easy/Hard)
 
-What's This RGB currently features an easy and a hard mode, where the only difference is the number of squares generated. Clicking on a mode button triggers an event listener to highlight the selected mode and render the appropriate number of squares. *Note:  Squares have been styled to appear circular.*
+RGBandMe currently features an easy and a hard mode, where the only difference is the number of squares generated. Clicking on a mode button triggers an event listener to highlight the selected mode and render the appropriate number of squares. *Note:  Squares have been styled to appear circular.*
 
 ```javascript
 function setModeButtons() {
